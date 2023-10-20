@@ -1,0 +1,14 @@
+cmake_minimum_required(VERSION 3.20)
+project(fox VERSION 0.1.0 LANGUAGES C CXX)
+
+
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
+
+# set(SOURCE
+#    ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
+# )
+# set(HEADERS
+#    ${CMAKE_CURRENT_SOURCE_DIR}/file2.hpp
+# )
+
+add_executable(${PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
