@@ -1,0 +1,4 @@
+namespace Fox
+{
+    
+} // namespace Fox

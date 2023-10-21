@@ -1,0 +1,37 @@
+#pragma once
+
+#include <iostream>
+#include "entt.hpp"
+
+namespace Fox
+{
+    class Entity
+    {
+
+    private:
+        entt::entity m_EntityHandle;
+        std::shared_ptr<entt::registry> m_Scene;
+
+    public:
+        Entity(entt::entity handle, std::shared_ptr<entt::registry> scene) : m_EntityHandle(handle), m_Scene(scene)
+        {
+        }
+
+        ~Entity()
+        {
+        }
+
+        template <typename T, typename... Args>
+        T &AddComponent(Args &&...args)
+        {
+            return m_Scene->emplace<T>(m_EntityHandle, std::forward<Args>(args)...);
+        }
+
+        template <typename T>
+        T &GetComponent()
+        {
+            return m_Scene->get<T>(m_EntityHandle);
+        }
+    };
+
+} // namespace Fox
