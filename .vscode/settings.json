@@ -50,5 +50,6 @@
     "streambuf": "cpp",
     "typeinfo": "cpp"
   },
-  "cSpell.words": ["entt"]
+  "cSpell.words": ["entt"],
+  "C_Cpp.errorSquiggles": "enabled"
 }

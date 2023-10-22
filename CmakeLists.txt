@@ -8,6 +8,21 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
 # add_library(entity SHARED "lib/Entity.cpp")
 # include_directories(entity PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
+# raygui
+add_library(raygui INTERFACE)
+file(GLOB sources "vendor/raylib/raygui.h")
+set(RAYGUI_HEADERS ${sources})
+install(FILES
+    ${RAYGUI_HEADERS} DESTINATION include
+)
+
+target_include_directories(raygui INTERFACE "vendor/raylib")
+
+
+#raylib
+link_directories(raylib ${CMAKE_CURRENT_SOURCE_DIR}/vendor/raylib/lib/)
+file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/vendor/raylib/lib/raylib.dll" DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/bin) # COPY DLL to BIN Folder
+
 add_executable(${PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
-target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/lib ${CMAKE_CURRENT_SOURCE_DIR}/include)
-target_link_libraries(${PROJECT_NAME} PUBLIC)
+target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/lib ${CMAKE_CURRENT_SOURCE_DIR}/include ${CMAKE_CURRENT_SOURCE_DIR}/vendor/raylib/include)
+target_link_libraries(${PROJECT_NAME} PUBLIC raylib raygui opengl32 gdi32 winmm)

@@ -5,9 +5,9 @@ namespace Components
 {
     struct Position
     {
-        int x;
-        int y;
-        int z;
+        float x;
+        float y;
+        float z;
     };
     struct Rotation
     {
