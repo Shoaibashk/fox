@@ -48,7 +48,8 @@
     "ostream": "cpp",
     "stdexcept": "cpp",
     "streambuf": "cpp",
-    "typeinfo": "cpp"
+    "typeinfo": "cpp",
+    "cstdarg": "cpp"
   },
   "cSpell.words": ["entt"],
   "C_Cpp.errorSquiggles": "enabled"

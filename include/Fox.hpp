@@ -1,4 +1,0 @@
-namespace Fox
-{
-    
-} // namespace Fox

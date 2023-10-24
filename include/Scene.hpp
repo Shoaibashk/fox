@@ -1,4 +1,3 @@
-#include "entt.hpp"
 #include "Entity.hpp"
 
 namespace Fox
@@ -24,7 +23,7 @@ namespace Fox
         return Fox::Entity(entity, m_Registry);
     }
 
-    Scene::Scene()
+    inline Scene::Scene()
     {
         m_Registry = std::make_shared<entt::registry>();
     }

@@ -16,9 +16,12 @@ namespace Fox
         Entity(entt::entity handle, std::shared_ptr<entt::registry> scene) : m_EntityHandle(handle), m_Scene(scene)
         {
         }
-
+        Entity()
+        {
+        }
         ~Entity()
         {
+            std::cout << "All Entities are destroyed" << std::endl;
         }
 
         template <typename T, typename... Args>
@@ -31,6 +34,12 @@ namespace Fox
         T &GetComponent()
         {
             return m_Scene->get<T>(m_EntityHandle);
+        }
+
+        template <typename T>
+        void RemoveComponent()
+        {
+            m_Scene->erase<T>(m_EntityHandle);
         }
     };
 
