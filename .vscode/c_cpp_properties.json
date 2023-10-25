@@ -5,7 +5,9 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/include",
-                "${workspaceFolder}/vendor/raygui/src"
+                "${workspaceFolder}/vendor/raygui/src",
+                "${workspaceFolder}/vendor/rlImGui",
+                "${workspaceFolder}/lib"
             ],
             "defines": [
                 "_DEBUG",

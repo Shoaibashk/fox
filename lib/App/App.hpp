@@ -1,16 +1,5 @@
-
-#include <iostream>
-#include <string>
-
-#include "entt.hpp"
-#include "Components.hpp"
-
-#include "Entity.hpp"
-#include "Scene.hpp"
-#include "raylib.h"
-
-#define RAYGUI_IMPLEMENTATION
-#include "raygui.h"
+#pragma once
+#include <Fox.hpp>
 
 #define SCREEN_W 1920
 #define SCREEN_H 1080

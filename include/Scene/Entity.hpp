@@ -1,7 +1,7 @@
 #pragma once
 
-#include <iostream>
-#include "entt.hpp"
+#include "fxpch.hpp"
+#include "Fox.hpp"
 
 namespace Fox
 {

@@ -4,11 +4,15 @@ project(fox VERSION 0.1.0 LANGUAGES C CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/bin)
 
+set(INCLUDE_DIR  ${CMAKE_CURRENT_SOURCE_DIR}/include )
+set(LIB_DIR  ${CMAKE_CURRENT_SOURCE_DIR}/lib )
+
 set(HEADER_DIRS 
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
     ${CMAKE_CURRENT_SOURCE_DIR}/lib 
-    ${CMAKE_CURRENT_SOURCE_DIR}/include 
     ${CMAKE_CURRENT_SOURCE_DIR}/vendor/raylib/include
     ${CMAKE_CURRENT_SOURCE_DIR}/vendor/entt/single_include/entt/
+    ${CMAKE_CURRENT_SOURCE_DIR}/vendor/spdlog/include/spdlog
     ${CMAKE_CURRENT_SOURCE_DIR}/vendor/raygui/src/
 )
 
@@ -21,21 +25,22 @@ set(RAYGUI_HEADERS ${sources})
 install(FILES
     ${RAYGUI_HEADERS} DESTINATION include
 )
-
 target_include_directories(raygui INTERFACE "vendor/raylib")
-
 
 #raylib
 link_directories(raylib ${CMAKE_CURRENT_SOURCE_DIR}/vendor/raylib/lib/)
 file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/vendor/raylib/lib/raylib.dll" DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/bin) # COPY DLL to BIN Folder
 
-
+# #static link 
+# file(GLOB include_dir_glob ${INCLUDE_DIR}/**/*.cpp)
+# add_library(includeDir STATIC ${include_dir_glob})
 
 #App
-add_library(app SHARED ${CMAKE_CURRENT_SOURCE_DIR}/lib/App.cpp)
+add_library(app SHARED ${CMAKE_CURRENT_SOURCE_DIR}/lib/App/App.cpp)
 target_include_directories(app PRIVATE ${HEADER_DIRS})
-target_link_libraries(app PUBLIC raylib raygui opengl32 gdi32 winmm)
+target_link_libraries(app PUBLIC  raylib raygui opengl32 gdi32 winmm)
 
+#Main
 add_executable(${PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${HEADER_DIRS})

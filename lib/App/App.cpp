@@ -2,6 +2,7 @@
 
 void Fox::App::Run()
 {
+    
     Setup();
 
     while (!WindowShouldClose())
@@ -18,7 +19,7 @@ void Fox::App::Run()
 Fox::App::App()
 {
     InitWindow(SCREEN_W, SCREEN_H, "Test");
-    SetTargetFPS(60);
+    SetTargetFPS(144);
 }
 
 Fox::App::~App()
