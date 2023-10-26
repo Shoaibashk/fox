@@ -3,7 +3,7 @@
 #include "fxpch.hpp"
 #include "Layer.hpp"
 
-namespace Fox
+namespace fox
 {
     class LayerStack
     {

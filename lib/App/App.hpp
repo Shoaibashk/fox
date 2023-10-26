@@ -1,10 +1,11 @@
 #pragma once
-#include <Fox.hpp>
+#include <fox.hpp>
+#include <fxpch.hpp>
 
 #define SCREEN_W 1920
 #define SCREEN_H 1080
 
-namespace Fox
+namespace fox
 {
 
     class App

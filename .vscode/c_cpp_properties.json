@@ -6,7 +6,6 @@
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/include",
                 "${workspaceFolder}/vendor/raygui/src",
-                "${workspaceFolder}/vendor/rlImGui",
                 "${workspaceFolder}/lib"
             ],
             "defines": [
@@ -15,7 +14,8 @@
                 "_UNICODE"
             ],
             "cStandard": "c17",
-            "cppStandard": "gnu++17"
+            "cppStandard": "gnu++17",
+            "compilerPath": "D:/Apps/scoop/apps/mingw-winlibs-llvm-ucrt/current/bin/clang++.exe"
         }
     ],
     "version": 4

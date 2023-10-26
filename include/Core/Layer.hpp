@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Fox.hpp"
+#include "fox.hpp"
 
-namespace Fox
+namespace fox
 {
 
     class Layer

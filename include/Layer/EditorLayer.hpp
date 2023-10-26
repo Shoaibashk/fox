@@ -1,9 +1,9 @@
 #include <fxpch.hpp>
-#include <Fox.hpp>
+#include <fox.hpp>
 
-namespace Fox
+namespace fox
 {
-    class EditorLayer : public Fox::Layer
+    class EditorLayer : public fox::Layer
     {
     private:
     public:

@@ -1,9 +1,9 @@
 #pragma once
 
 #include "fxpch.hpp"
-#include "Fox.hpp"
+#include "fox.hpp"
 
-namespace Fox
+namespace fox
 {
     class Entity
     {
@@ -16,9 +16,7 @@ namespace Fox
         Entity(entt::entity handle, std::shared_ptr<entt::registry> scene) : m_EntityHandle(handle), m_Scene(scene)
         {
         }
-        Entity()
-        {
-        }
+
         ~Entity()
         {
             std::cout << "All Entities are destroyed" << std::endl;

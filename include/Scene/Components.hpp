@@ -1,7 +1,7 @@
+#pragma once
+#include <fxpch.hpp>
 
-#include <iostream>
-
-namespace Components
+namespace Component
 {
     struct Position
     {

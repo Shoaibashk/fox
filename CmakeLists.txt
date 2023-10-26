@@ -16,8 +16,6 @@ set(HEADER_DIRS
     ${CMAKE_CURRENT_SOURCE_DIR}/vendor/raygui/src/
 )
 
-
-
 # raygui
 add_library(raygui INTERFACE)
 file(GLOB sources "vendor/raygui/src/raygui.h")

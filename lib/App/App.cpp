@@ -1,8 +1,8 @@
 #include "App.hpp"
 
-void Fox::App::Run()
+void fox::App::Run()
 {
-    
+
     Setup();
 
     while (!WindowShouldClose())
@@ -16,13 +16,13 @@ void Fox::App::Run()
     }
 }
 
-Fox::App::App()
+fox::App::App()
 {
     InitWindow(SCREEN_W, SCREEN_H, "Test");
     SetTargetFPS(144);
 }
 
-Fox::App::~App()
+fox::App::~App()
 {
     std::cout << "Application Closed" << std::endl;
     CloseWindow();
