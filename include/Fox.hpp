@@ -4,6 +4,10 @@
 #define RAYGUI_IMPLEMENTATION
 #include "raygui.h"
 
+#include "raymath.h"
+
+#include "imgui.h"
+#include "rlImGui.h"
 #include "entt.hpp"
 
 #include "Scene/Components.hpp"

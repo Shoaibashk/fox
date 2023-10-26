@@ -47,8 +47,28 @@ namespace fox
                 layer->OnUpdate();
             }
 
+            // show ImGui Content
             bool open = true;
+            if (ImGui::BeginMainMenuBar())
+            {
+                if (ImGui::BeginMenu("File"))
+                {
+                    // if (ImGui::MenuItem("Exit"))
+                    //     open = true;
 
+                    ImGui::EndMenu();
+                }
+
+                if (ImGui::BeginMenu("Window"))
+                {
+                    ImGui::MenuItem("ImGui Demo", nullptr, &open);
+                    ImGui::MenuItem("Image Viewer", nullptr, &open);
+                    ImGui::MenuItem("3D View", nullptr, &open);
+
+                    ImGui::EndMenu();
+                }
+                ImGui::EndMainMenuBar();
+            }
 
             for (auto system : m_SystemStack)
             {

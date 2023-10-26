@@ -1,3 +1,4 @@
+#pragma once
 #include <fxpch.hpp>
 #include <fox.hpp>
 

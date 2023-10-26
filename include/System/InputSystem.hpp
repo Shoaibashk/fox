@@ -37,7 +37,7 @@ namespace Systems
                     pos.z -= 2.0f;
             }
         };
-        void OnDetach() {}
+        void OnDetach() override {}
         InputSystem(std::shared_ptr<fox::Scene> sceneHandle) : System(sceneHandle){};
         ~InputSystem(){};
     };

@@ -14,7 +14,12 @@ set(HEADER_DIRS
     ${CMAKE_CURRENT_SOURCE_DIR}/vendor/entt/single_include/entt/
     ${CMAKE_CURRENT_SOURCE_DIR}/vendor/spdlog/include/spdlog
     ${CMAKE_CURRENT_SOURCE_DIR}/vendor/raygui/src/
+    ${CMAKE_CURRENT_SOURCE_DIR}/vendor/imgui/
+    ${CMAKE_CURRENT_SOURCE_DIR}/vendor/imgui-impl-raylib/
+    ${CMAKE_CURRENT_SOURCE_DIR}/vendor/rlImGui/
+  
 )
+
 
 # raygui
 add_library(raygui INTERFACE)
@@ -29,14 +34,32 @@ target_include_directories(raygui INTERFACE "vendor/raylib")
 link_directories(raylib ${CMAKE_CURRENT_SOURCE_DIR}/vendor/raylib/lib/)
 file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/vendor/raylib/lib/raylib.dll" DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/bin) # COPY DLL to BIN Folder
 
-# #static link 
-# file(GLOB include_dir_glob ${INCLUDE_DIR}/**/*.cpp)
-# add_library(includeDir STATIC ${include_dir_glob})
+#imgui-tables
+add_library(imgui_tables STATIC  ${CMAKE_CURRENT_SOURCE_DIR}/vendor/imgui/imgui_tables.cpp)
+target_include_directories(imgui_tables PUBLIC ${HEADER_DIRS})
+
+#imgui-draw
+add_library(imgui_draw STATIC  ${CMAKE_CURRENT_SOURCE_DIR}/vendor/imgui/imgui_draw.cpp)
+target_include_directories(imgui_draw PUBLIC ${HEADER_DIRS})
+
+#imgui-widget
+add_library(imgui_widget STATIC  ${CMAKE_CURRENT_SOURCE_DIR}/vendor/imgui/imgui_widgets.cpp)
+target_include_directories(imgui_widget PUBLIC ${HEADER_DIRS})
+
+#imgui
+add_library(imgui STATIC  ${CMAKE_CURRENT_SOURCE_DIR}/vendor/imgui/imgui.cpp)
+target_include_directories(imgui PUBLIC ${HEADER_DIRS})
+target_link_libraries(imgui PUBLIC imgui_tables imgui_widget imgui_draw opengl32 gdi32 winmm)
+
+#rlImGui
+add_library(rlImGui STATIC ${CMAKE_CURRENT_SOURCE_DIR}/vendor/rlImGui/rlImGui.cpp)
+target_include_directories(rlImGui PUBLIC ${HEADER_DIRS})
+target_link_libraries(rlImGui PUBLIC imgui raylib opengl32 gdi32 winmm)
 
 #App
 add_library(app SHARED ${CMAKE_CURRENT_SOURCE_DIR}/lib/App/App.cpp)
 target_include_directories(app PRIVATE ${HEADER_DIRS})
-target_link_libraries(app PUBLIC  raylib raygui opengl32 gdi32 winmm)
+target_link_libraries(app PUBLIC rlImGui raylib raygui opengl32 gdi32 winmm)
 
 #Main
 add_executable(${PROJECT_NAME} ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
