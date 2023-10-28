@@ -20,14 +20,14 @@ namespace Systems
             for (auto [entity, pos, scale] : Reg->view<Component::Position, Component::Scale>().each())
             {
 
-                GuiSliderBar({pos.x - 50, pos.y + 120, 100, 20}, "+", "-", &pos.z, 1, 100);
+                // GuiSliderBar({pos.x - 50, pos.y + 120, 100, 20}, "+", "-", &pos.z, 1, 100);
 
-                DrawCircle(pos.x, pos.y, pos.z, GREEN);
+                DrawRectangleV({pos.x, pos.y}, {scale.x, scale.y}, GREEN);
 
-                DrawText("move the ball with arrow keys", 10, 10, 20, DARKGRAY);
-                DrawText(std::to_string(pos.x).c_str(), 10, 30, 20, DARKGRAY);
-                DrawText(std::to_string(pos.y).c_str(), 10, 60, 20, DARKGRAY);
-                DrawText(std::to_string(pos.z).c_str(), 10, 90, 20, DARKGRAY);
+                // DrawText("move the ball with arrow keys", 10, 10, 20, DARKGRAY);
+                // DrawText(std::to_string(pos.x).c_str(), 10, 30, 20, DARKGRAY);
+                // DrawText(std::to_string(pos.y).c_str(), 10, 60, 20, DARKGRAY);
+                // DrawText(std::to_string(pos.z).c_str(), 10, 90, 20, DARKGRAY);
                 // std::cout << pos.x << std::endl;
                 // std::cout << pos.y << std::endl;
                 // std::cout << pos.z << std::endl;

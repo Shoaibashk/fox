@@ -1,12 +1,13 @@
 #pragma once
-
+#define SCREEN_W 1920   
+#define SCREEN_H 1080
 #include "raylib.h"
 #define RAYGUI_IMPLEMENTATION
 #include "raygui.h"
 
 #include "raymath.h"
 
-#include "imgui.h"
+#include "imgui_impl_raylib.h"
 #include "rlImGui.h"
 #include "entt.hpp"
 

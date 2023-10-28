@@ -7,19 +7,16 @@ namespace Component
     {
         float x;
         float y;
-        float z;
     };
     struct Rotation
     {
         float x;
         float y;
-        float z;
     };
     struct Scale
     {
         float x;
         float y;
-        float z;
     };
 
     struct Transform

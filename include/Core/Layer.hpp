@@ -11,7 +11,10 @@ namespace fox
     public:
         Layer(const std::string &name = "Layer") : m_DebugName(name){};
         virtual ~Layer() {}
-        virtual void OnAttach() {}
+        virtual void OnAttach(std::shared_ptr<Scene> scene)
+        {
+            this->m_Scene = scene;
+        }
         virtual void OnDetach() {}
         virtual void OnUpdate() {}
         // virtual void OnEvent(Event& event) {}
@@ -21,6 +24,7 @@ namespace fox
         };
 
     private:
+        std::shared_ptr<Scene> m_Scene;
         std::string m_DebugName;
     };
 

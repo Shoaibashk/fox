@@ -18,7 +18,7 @@ void fox::App::Run()
 
 fox::App::App()
 {
-    SetConfigFlags(FLAG_WINDOW_RESIZABLE | FLAG_MSAA_4X_HINT | FLAG_VSYNC_HINT);
+    SetConfigFlags(FLAG_WINDOW_UNDECORATED | FLAG_MSAA_4X_HINT | FLAG_VSYNC_HINT);
     InitWindow(SCREEN_W, SCREEN_H, "Test");
 
     SetTargetFPS(144);

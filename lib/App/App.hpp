@@ -2,9 +2,6 @@
 #include <fox.hpp>
 #include <fxpch.hpp>
 
-#define SCREEN_W 1280
-#define SCREEN_H 768
-
 namespace fox
 {
 

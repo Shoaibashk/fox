@@ -31,10 +31,14 @@ namespace Systems
                     pos.y -= 2.0f;
                 if (IsKeyDown(KEY_DOWN))
                     pos.y += 2.0f;
-                if (IsKeyDown(KEY_Z))
-                    pos.z += 2.0f;
-                if (IsKeyDown(KEY_X))
-                    pos.z -= 2.0f;
+                if (IsKeyDown(KEY_D))
+                    scale.x += 2.0f;
+                if (IsKeyDown(KEY_A))
+                    scale.x -= 2.0f;
+                if (IsKeyDown(KEY_W))
+                    scale.y += 2.0f;
+                if (IsKeyDown(KEY_S))
+                    scale.y -= 2.0f;
             }
         };
         void OnDetach() override {}
