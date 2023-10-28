@@ -35,9 +35,9 @@ namespace Systems
                     scale.x += 2.0f;
                 if (IsKeyDown(KEY_A))
                     scale.x -= 2.0f;
-                if (IsKeyDown(KEY_W))
-                    scale.y += 2.0f;
                 if (IsKeyDown(KEY_S))
+                    scale.y += 2.0f;
+                if (IsKeyDown(KEY_W))
                     scale.y -= 2.0f;
             }
         };

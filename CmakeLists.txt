@@ -13,17 +13,12 @@ set(HEADER_DIRS
     ${CMAKE_CURRENT_SOURCE_DIR}/vendor/raylib/include
     ${CMAKE_CURRENT_SOURCE_DIR}/vendor/entt/single_include/entt/
     ${CMAKE_CURRENT_SOURCE_DIR}/vendor/spdlog/include/spdlog
-    ${CMAKE_CURRENT_SOURCE_DIR}/vendor/raygui/src/
+ 
     ${CMAKE_CURRENT_SOURCE_DIR}/vendor/imgui/
     ${CMAKE_CURRENT_SOURCE_DIR}/vendor/imgui-impl-raylib/
     ${CMAKE_CURRENT_SOURCE_DIR}/vendor/rlImGui/
   
 )
-
-
-# # raygui
-# add_library(raygui INTERFACE)
-# target_include_directories(raygui INTERFACE ${HEADER_DIRS})
 
 #raylib
 link_directories(raylib ${CMAKE_CURRENT_SOURCE_DIR}/vendor/raylib/lib/)
