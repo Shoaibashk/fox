@@ -8,6 +8,10 @@ namespace Component
         float x;
         float y;
     };
+    // struct Colors
+    // {
+    //     CLITERAL(Color)
+    // };
     struct Rotation
     {
         float x;

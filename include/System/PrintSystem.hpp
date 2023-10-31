@@ -16,26 +16,9 @@ namespace Systems
         };
         void OnUpdate() override
         {
-
-            for (auto [entity, pos, scale] : Reg->view<Component::Position, Component::Scale>().each())
+            for (auto [entity, pos, scale, color] : Reg->view<Component::Position, Component::Scale, Color>().each())
             {
-
-                // GuiSliderBar({pos.x - 50, pos.y + 120, 100, 20}, "+", "-", &pos.z, 1, 100);
-
-                DrawRectangleV({pos.x, pos.y}, {scale.x, scale.y}, GREEN);
-
-                // DrawText("move the ball with arrow keys", 10, 10, 20, DARKGRAY);
-                // DrawText(std::to_string(pos.x).c_str(), 10, 30, 20, DARKGRAY);
-                // DrawText(std::to_string(pos.y).c_str(), 10, 60, 20, DARKGRAY);
-                // DrawText(std::to_string(pos.z).c_str(), 10, 90, 20, DARKGRAY);
-                // std::cout << pos.x << std::endl;
-                // std::cout << pos.y << std::endl;
-                // std::cout << pos.z << std::endl;
-                // std::cout << "-------------------------------------------" << std::endl;
-                // std::cout << scale.x << std::endl;
-                // std::cout << scale.y << std::endl;
-                // std::cout << scale.z << std::endl;
-                // std::cout << "-------------------------------------------" << std::endl;
+                DrawRectangleV({pos.x, pos.y}, {scale.x, scale.y}, color);
             }
         };
         void OnDetach() override

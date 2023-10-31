@@ -27,10 +27,18 @@ namespace fox
             //     style.WindowRounding = 0.0f;
             //     style.Colors[ImGuiCol_WindowBg].w = 1.0f;
             // }
+      
+
             active_scene = std::make_shared<Scene>();
             entities = active_scene->CreateEntity();
 
             entities->AddComponent<Component::Position>((float)SCREEN_W / 2, (float)SCREEN_H / 2);
+            entities->AddComponent<Color>(GREEN);
+            entities->AddComponent<Component::Scale>((float)20.0f, (float)20.0f);
+            entities = active_scene->CreateEntity();
+
+            entities->AddComponent<Component::Position>((float)SCREEN_W / 3, (float)SCREEN_H / 3);
+            entities->AddComponent<Color>(RED);
             entities->AddComponent<Component::Scale>((float)20.0f, (float)20.0f);
 
             AddSystem(new Systems::InputSystem(active_scene));

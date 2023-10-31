@@ -2,7 +2,9 @@
 
 void fox::App::Run()
 {
+    ImGuiIO &io = ImGui::GetIO();
 
+    io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
     Setup();
 
     while (!WindowShouldClose())
